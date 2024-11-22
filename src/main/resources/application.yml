@@ -10,6 +10,11 @@ spring:
     url: jdbc:mysql://localhost:3306/experiment?useSSL=false&useUnicode=true&characterEncoding=UTF-8
     username: root
     password: 147258
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
+  jackson:
+    default-property-inclusion: non_null
 
 mybatis-plus:
   configuration:
@@ -19,8 +24,11 @@ server:
   error:
     include-message: always
 
-management:
-  endpoints:
-    web:
-      exposure:
-        include: "*"
+springdoc:
+  api-docs:
+    path: /v3/api-docs
+  swagger-ui:
+    path: /swagger-ui.html
+
+knife4j:
+  enable: true

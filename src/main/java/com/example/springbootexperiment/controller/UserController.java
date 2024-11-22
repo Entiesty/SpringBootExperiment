@@ -15,7 +15,7 @@ public class UserController {
         this.userService = userService;
     }
 
-    @PostMapping()
+    @PostMapping
     public boolean saveUser(@RequestBody User user) {
         return userService.saveUser(user);
     }
